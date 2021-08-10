@@ -1,15 +1,15 @@
 const {FIOSDK } = require('@fioprotocol/fiosdk')
 fetch = require('node-fetch')
+const properties = require('./properties.js')
 
 const fetchJson = async (uri, opts = {}) => {
   return fetch(uri, opts)
 }
 
-const baseUrl = 'https://testnet.fioprotocol.io/v1/'
-//const baseUrl = 'https://fio.greymass.com/v1/'
+const baseUrl = properties.server + '/v1/'
 
-const privateKey = '',
-  publicKey = '',
+const privateKey = properties.privateKey,
+  publicKey = properties.publicKey,
   fio_domain = '',
   owner_fio_public_key = publicKey,
   max_fee = 1000000000000

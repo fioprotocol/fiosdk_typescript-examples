@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
+const properties = require('./properties.js')
 
-const baseUrl = 'https://testnet.fioprotocol.io/v1/'
-//const baseUrl = 'https://fio.greymass.com/v1/'
+const baseUrl = properties.server + '/v1/'
 
 const fio_address = ''
 
