@@ -1,6 +1,6 @@
 const fetch = require('node-fetch')
 
-const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
+const baseUrl = 'https://testnet.fioprotocol.io/v1/'
 //const baseUrl = 'https://fio.greymass.com/v1/'
 
 const get_nfts_fio_address = async () => {

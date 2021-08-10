@@ -11,18 +11,11 @@ const baseUrl = 'https://testnet.fioprotocol.io/v1/'
 const privateKey = '',
   publicKey = '',
   fio_address = '',
+  owner_fio_public_key = publicKey,
   max_fee = 100000000000
 
-const nft = {
-  chain_code: '',
-  contract_address: '',
-  token_id: '',
-  url: '',
-  hash: '',
-  metadata: ''
-}
 
-const addnft = async () => {
+const regaddress = async () => {
 
   user = new FIOSDK(
     privateKey,
@@ -33,20 +26,11 @@ const addnft = async () => {
 
   try {
     const result = await user.genericAction('pushTransaction', {
-      action: 'addnft',
+      action: 'regaddress',
       account: 'fio.address',
       data: {
         fio_address: fio_address,
-        nfts: [
-          {
-            chain_code: nft.chain_code,
-            contract_address: nft.contract_address,
-            token_id: nft.token_id,
-            url: nft.url,
-            hash: nft.hash,
-            metadata: nft.metadata
-          }
-        ],
+        owner_fio_public_key: owner_fio_public_key,
         max_fee: max_fee,
         tpid: ''
       }
@@ -57,4 +41,4 @@ const addnft = async () => {
   }
 }
 
-addnft();
+regaddress();
