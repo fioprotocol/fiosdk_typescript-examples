@@ -1,12 +1,12 @@
 const fetch = require('node-fetch')
 
-const baseUrl = 'http://44.234.118.142:8889/v1/'
-//const baseUrl = 'https://fio.greymass.com/v1/'  // Mainnet
+const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
+//const baseUrl = 'https://fio.greymass.com/v1/'
 
 const get_nfts_fio_address = async () => {
   pushResult = await fetch(baseUrl + 'chain/get_nfts_fio_address', {
     body: `{
-      "fio_address": "artcollection1@ericnfts",
+      "fio_address": "",
       "limit": 100,
       "offset": 0
     }`,

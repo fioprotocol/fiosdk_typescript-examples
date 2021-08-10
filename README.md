@@ -2,5 +2,5 @@
 
 ```
 npm install
-node fio-request-send.js
+node fio.address-addnft.js
 ```
