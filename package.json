@@ -2,7 +2,7 @@
     "name": "fiosdk_typescript-examples",
     "version": "1.0.0",
     "dependencies": {
-        "@fioprotocol/fiosdk": "^1.2.0",
+        "@fioprotocol/fiosdk": "^1.3.0",
         "node-fetch": "^2.6.1"
     }
 }
