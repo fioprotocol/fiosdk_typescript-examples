@@ -12,10 +12,10 @@ const properties = require('./properties.js');
 
 const privateKey = properties.privateKey,
   account = properties.account,
-  permissionName = 'regaddress',
-  parent = 'active',
+  permissionName = '',
+  parent = '',
   registrarAccount = '',  // The account that will register addresses on behalf of the domain owner
-  permission = 'active',
+  permission = '',
   max_fee = 1000000000000
 
 const baseUrl = properties.server + '/v1/';
