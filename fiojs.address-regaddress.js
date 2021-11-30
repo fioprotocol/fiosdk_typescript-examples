@@ -8,7 +8,7 @@ const httpEndpoint = properties.server
 const privateKey = properties.privateKey,
   publicKey = properties.publicKey,
   account = properties.account,
-  address = 'purse@alice',  // The address you want to register
+  address = '',     // The address you want to register
   maxFee = 100000000000
 
 const fiojsRegaddress = async () => {
@@ -35,7 +35,7 @@ const fiojsRegaddress = async () => {
         fio_address: address,
         owner_fio_public_key: publicKey,
         max_fee: maxFee,
-        tpid: 'rewards@wallet',
+        tpid: '',
         actor: account,
       },
     }]

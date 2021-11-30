@@ -1,21 +1,20 @@
 /**
- * Adds a new permission to an account. In this example it adds a "regaddress" permission to the account.
- * This permission can then be linked to a contract action (see eosio-linkauth.js) to enable a secondary 
+ * This links a previousliy created permission to a contract action to enable a secondary 
  * account to execute actions on the primary accounts behalf.
  * 
  * This script only uses the fiojs library.
  */
 
 const { Fio } = require('@fioprotocol/fiojs');
+const { TextEncoder, TextDecoder } = require('text-encoding');
 fetch = require('node-fetch');
 const properties = require('./properties.js');
 
 const privateKey = properties.privateKey,
   account = properties.account,
-  permissionName = 'regaddress',
-  parent = 'active',
-  registrarAccount = '',  // The account that will register addresses on behalf of the domain owner
-  permission = 'active',
+  permissionName = '',   // The permission to be linked (created by updateauth)
+  contract = '',    // System contract that owns the action to be linked (e.g., 'fio.address')
+  contractAction = '',   // The system contract action to be linked (e.g., 'addaddress')
   max_fee = 1000000000000
 
 const baseUrl = properties.server + '/v1/';
@@ -70,40 +69,28 @@ const callFioApiSigned = async (endPoint, txn) => {
 };
 
 
-const updateauth = async () => {
+const linkauth = async () => {
 
   try {
 
     const result = await callFioApiSigned('push_transaction', {
-      action: 'updateauth',
+      action: 'linkauth',
       account: 'eosio',
       actor: account,
       privKey: privateKey,
       data: {
-        "account": account,
-        "permission": permissionName,
-        "parent": parent,
-        "auth": {
-          "threshold": 1,
-          "keys": [],
-          "waits": [],
-          "accounts": [{
-            "permission": {
-              "actor": registrarAccount,
-              "permission": permission
-            },
-            "weight": 1
-          }
-          ]
-        },
-        "max_fee": max_fee
+        account: account,             // The name of the account containing the permission to link
+        code: contract,               // System contract that owns the action to be linked
+        type: contractAction,         // The action to be linked
+        requirement: permissionName,  // The permission to be linked
+        max_fee: max_fee
       }
-    })
+    });
 
     console.log('Result: ', result)
   } catch (err) {
-    console.log('Error: ', err.json)
+    console.log('Error: ', err)
   }
 }
 
-updateauth();
+linkauth();
