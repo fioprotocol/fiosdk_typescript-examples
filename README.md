@@ -8,7 +8,8 @@ Create a properties.js file in the root directory with the following:
 const properties = {
   server: '',
   publicKey: '',
-  privateKey: ''
+  privateKey: '',
+  account: ''
 };
 
 module.exports = properties;
