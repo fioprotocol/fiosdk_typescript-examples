@@ -1,7 +1,3 @@
-/**
- * FIO SDK example of regproxy
- * API details: https://developers.fioprotocol.io/pages/api/fio-api/#options-regproxy
- */
 const { FIOSDK } = require('@fioprotocol/fiosdk')
 fetch = require('node-fetch')
 const properties = require('./properties.js')
@@ -14,12 +10,11 @@ const baseUrl = properties.server + '/v1/'
 
 const privateKey = properties.privateKey,
   publicKey = properties.publicKey,
-  actor = properties.account,
-  proxy_address = '',
-  max_fee = 100000000000
+  fio_address = '',
+  max_fee = 10000000000000
 
 
-const regproxy = async () => {
+const renewaddress = async () => {
 
   user = new FIOSDK(
     privateKey,
@@ -30,12 +25,12 @@ const regproxy = async () => {
 
   try {
     const result = await user.genericAction('pushTransaction', {
-      action: 'regproxy',
-      account: 'eosio',
+      action: 'renewaddress',
+      account: 'fio.address',
       data: {
-        fio_address: proxy_address,
-        actor: actor,
-        max_fee: max_fee
+        fio_address: fio_address,
+        max_fee: max_fee,
+        tpid: ''
       }
     })
     console.log('Result: ', result)
@@ -44,4 +39,4 @@ const regproxy = async () => {
   }
 }
 
-regproxy();
+renewaddress();

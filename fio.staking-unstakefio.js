@@ -1,4 +1,8 @@
-const {FIOSDK } = require('@fioprotocol/fiosdk')
+/**
+ * FIO SDK example of unstakefio
+ * API details: https://developers.fioprotocol.io/pages/api/fio-api/#options-unstakefio
+ */
+const { FIOSDK } = require('@fioprotocol/fiosdk')
 fetch = require('node-fetch')
 const properties = require('./properties.js')
 
@@ -37,7 +41,7 @@ const unstakefio = async () => {
     })
     console.log('Result: ', result)
   } catch (err) {
-    console.log('Error: ', err.json.error)
+    console.log('Error: ', err)
   }
 }
 
