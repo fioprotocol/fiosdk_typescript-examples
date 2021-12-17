@@ -1,6 +1,6 @@
 /**
- * FIO SDK example of regproxy
- * API details: https://developers.fioprotocol.io/pages/api/fio-api/#options-regproxy
+ * FIO SDK example of voteproxy
+ * API details: https://developers.fioprotocol.io/pages/api/fio-api/#options-voteproxy
  */
 const { FIOSDK } = require('@fioprotocol/fiosdk')
 fetch = require('node-fetch')
@@ -14,12 +14,12 @@ const baseUrl = properties.server + '/v1/'
 
 const privateKey = properties.privateKey,
   publicKey = properties.publicKey,
-  actor = properties.account,
-  proxy_address = '',
+  proxy = '',     // The FIO Crypto Handle of the registered proxy
+  fio_address = '',  // The FIO Crypto Handle of the account that is proxying their vote
   max_fee = 100000000000
 
 
-const regproxy = async () => {
+const voteproxy = async () => {
 
   user = new FIOSDK(
     privateKey,
@@ -30,18 +30,18 @@ const regproxy = async () => {
 
   try {
     const result = await user.genericAction('pushTransaction', {
-      action: 'regproxy',
+      action: 'voteproxy',
       account: 'eosio',
       data: {
-        fio_address: proxy_address,
-        actor: actor,
+        proxy: proxy,
+        fio_address: fio_address,
         max_fee: max_fee
       }
     })
     console.log('Result: ', result)
   } catch (err) {
-    console.log('Error: ', err)
+    console.log('Error: ', err.json)
   }
 }
 
-regproxy();
+voteproxy();
