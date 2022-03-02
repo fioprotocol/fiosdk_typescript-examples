@@ -4,7 +4,7 @@
  * FIO SDK example of updateauth
  * API details: https://developers.eos.io/manuals/eosjs/v22.0/how-to-guides/how-to-create-permissions
  * 
- * The example creates a new account permission called register_my_addresses and assignes this permission to a
+ * The example creates a new account permission called register_my_addresses and assigns this permission to a
  * separate account. 
  */
 const { FIOSDK } = require('@fioprotocol/fiosdk')

@@ -34,7 +34,7 @@ const linkauth = async () => {
 
   try {
     const result = await user.genericAction('pushTransaction', {
-      action: 'updateauth',
+      action: 'linkauth',
       account: 'eosio',
       data: {
         account: account,                // the owner of the permission to be linked, this account will sign the transaction
