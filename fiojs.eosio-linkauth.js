@@ -1,11 +1,12 @@
 /**
+ * 
  * FIO SDK example of linkauth
  * EOSIO API details: https://developers.eos.io/manuals/eosjs/v22.0/how-to-guides/how-to-link-permissions
  * 
  * To link an existing permission, submit a transaction to the linkauth action of the eosio account.
  * 
- * In the example shown below links the permission 'regmyadd' to the addaddress contract action
- * contract_action action.
+ * In the example shown below links the permission 'regmyadd' to the addaddress contract action.
+ * 
  */
 const { Fio } = require('@fioprotocol/fiojs');
 const { TextEncoder, TextDecoder } = require('text-encoding');
