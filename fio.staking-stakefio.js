@@ -12,6 +12,7 @@ const privateKey = properties.privateKey,
   publicKey = properties.publicKey,
   amount = 2000000000,
   fio_address = '',
+  tpid = '',     // e.g., autoproxy@fiotestnet
   max_fee = 10000000000
 
 
@@ -32,7 +33,7 @@ const stakefio = async () => {
         fio_address: fio_address,
         amount: amount,
         max_fee: max_fee,
-        tpid: ''
+        tpid: tpid
       }
     })
     console.log('Result: ', result)
