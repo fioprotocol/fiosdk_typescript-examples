@@ -10,7 +10,7 @@ const baseUrl = properties.server + '/v1/'
 
 const privateKey = properties.privateKey,
   publicKey = properties.publicKey,
-  payeeKey = 'FIO6RkzYHuxaFt7YbyAGqEFFeFCoy2PJD1tZjzymghJk2z9gH2LVY',  // FIO Public Key of the payee
+  payeeKey = '',  // FIO Public Key of the payee
   amount = 1000000000,
   max_fee = 100000000000
 
