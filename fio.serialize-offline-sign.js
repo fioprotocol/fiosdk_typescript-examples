@@ -64,14 +64,11 @@ const serialize = async () => {
 
 const sign = async (transaction, serializedTransaction, serializedContextFreeData, chainId) => {
 
-    user = new FIOSDK(
-        privateKey,
-        publicKey,
-        baseUrl,
-        fetchJson
-    )
+    const { Transactions } = require('@fioprotocol/fiosdk/lib/transactions/Transactions')
 
-     const signedTransaction = await user.transactions.sign({
+    let transactions2 = new Transactions;
+
+     const signedTransaction = await transactions2.sign({
         chainId,
         privateKeys: [privateKey],
         transaction,
@@ -80,7 +77,7 @@ const sign = async (transaction, serializedTransaction, serializedContextFreeDat
     });
     //console.log('signedTransaction: ', signedTransaction);
 
-    return signedTransaction ;
+    return signedTransaction;
 }
 
 const execute = async (signedTransaction) => {
