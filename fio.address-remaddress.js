@@ -16,9 +16,6 @@ const privateKey = properties.privateKey,
   public_address = '',
   max_fee = 1000000000
 
-  
-
-
 const remaddress = async () => {
 
   user = new FIOSDK(
