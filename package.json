@@ -3,6 +3,7 @@
     "version": "1.1.0",
     "dependencies": {
         "@fioprotocol/fiosdk": "^1.7.0",
-        "node-fetch": "^2.6.1"
+        "node-fetch": "^2.6.1",
+        "request-promise": ""
     }
 }
