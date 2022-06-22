@@ -7,7 +7,7 @@ const rp = require('request-promise');
 const baseUrl = 'http://fio.greymass.com/v1/'
 const urlApi = baseUrl + 'chain/'
 const urlHistory = baseUrl + 'history/'
-const bpAddress = '';
+const bpAccount = '';  // Account for BP
 
 function callFioApi(fiourl, apiCall, JSONObject) {
     return (new Promise(function(resolve, reject) {
@@ -53,7 +53,7 @@ const getbpvoters = async () => {
             //console.log('voters: ', voters);
 
             for (voter in voters.rows) {
-                if (voters.rows[voter].producers.includes(bpAddress)) {
+                if (voters.rows[voter].producers.includes(bpAccount)) {
                     //console.log('Producers: ', voters.rows[voter].owner);
                     if (voters.rows[voter].producers.length == 1) {  // Only add when the voter only voted for the single BP
                         voterList.push(voters.rows[voter].owner);
