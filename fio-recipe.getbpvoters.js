@@ -7,7 +7,7 @@ const rp = require('request-promise');
 const baseUrl = 'http://fio.greymass.com/v1/'
 const urlApi = baseUrl + 'chain/'
 const urlHistory = baseUrl + 'history/'
-const bpAddress = 'wba25vdfaigx';
+const bpAddress = '';
 
 function callFioApi(fiourl, apiCall, JSONObject) {
     return (new Promise(function(resolve, reject) {
