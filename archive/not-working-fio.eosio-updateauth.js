@@ -6,7 +6,7 @@
 
 const { FIOSDK } = require('@fioprotocol/fiosdk')
 fetch = require('node-fetch')
-const properties = require('./properties.js')
+const properties = require('../properties.js')
 
 const fetchJson = async (uri, opts = {}) => {
   return fetch(uri, opts)
