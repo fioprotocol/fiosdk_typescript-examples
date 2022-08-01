@@ -17,7 +17,7 @@ const accountInfo = {
 const chainData = {
   chain_id: "b20901380af44ef59c5918439a1f9a41d83669020319a80574b804a5f95cbd7e",
   expiration: "2022-06-22T20:12:11.088",
-  ref_block_num: 55477,
+  ref_block_num: 55477 & 0xffff,
   ref_block_prefix: 1922445087,
 };
 

@@ -11,8 +11,7 @@ const genMnemonic = async () => {
  
   account = FIOSDK.accountHash(publicKey).accountnm;
 
-  console.log('mnemonic: ', mnemonicExample);
-  console.log('acct: ', account)
+  console.log(`mnemonic: ${mnemonicExample}`);
   console.log(`Private Key: ${privateKey}`);
   console.log(`Public Key: ${publicKey}`);
   console.log(`Account: ${account}`);
