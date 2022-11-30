@@ -4,6 +4,8 @@
     "dependencies": {
         "@fioprotocol/fiosdk": "^1.7.0",
         "node-fetch": "^2.6.1",
-        "request-promise": ""
+        "request-promise": "",
+        "dotenv": "^16.0.3",
+        "web3": "^1.8.1"
     }
 }
