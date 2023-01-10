@@ -42,7 +42,7 @@ const wraptokens = async () => {
     })
     console.log('Result: ', result)
   } catch (err) {
-    console.log('Error: ', err.json.error)
+    console.log('Error: ', err)
   }
 }
 
