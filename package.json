@@ -1,5 +1,5 @@
 {
-    "name": "fiosdk_typescript-examples",
+    "name": "@fioprotocol/fiosdk_typescript-examples",
     "version": "1.1.0",
     "dependencies": {
         "@fioprotocol/fiosdk": "^1.8.0",
